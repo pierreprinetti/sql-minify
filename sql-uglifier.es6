@@ -9,15 +9,18 @@ let program = require('commander');
 let replaceStream = require('replacestream');
 
 program
-  .version('1.0.0');
+  .version('1.0.1');
 // .option('-w, --write', 'Replace the given file with the uglified one')
 // .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
 
 program.on('--help', function() {
   console.log('  Examples:');
   console.log('');
-  console.log('    $ uglify-sql myscript.sql                       # Outputs to the standard output');
-  console.log('    $ uglify-sql myscript.sql > uglified-script.sql # Redirects the output to the desired file');
+  console.log('    $ uglify-sql myscript.sql');
+  console.log('                   # Outputs to the standard output');
+  console.log('');
+  console.log('    $ uglify-sql myscript.sql > uglified-script.sql');
+  console.log('                   # Redirects the output to the desired file');
   console.log('');
 });
 

@@ -16,5 +16,8 @@ Install it with:
 
     Examples:
 
-      $ uglify-sql myscript.sql                       # Outputs to the standard output
-      $ uglify-sql myscript.sql > uglified-script.sql # Redirects the output to the desired file
+      $ uglify-sql myscript.sql
+                   # Outputs to the standard output
+
+      $ uglify-sql myscript.sql > uglified-script.sql
+                   # Redirects the output to the desired file
