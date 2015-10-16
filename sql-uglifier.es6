@@ -1,19 +1,45 @@
+#! /usr/bin/env node
+
 /* jshint node: true, esnext: true */
 'use strict';
+
+let path = require('path');
 let fs = require('fs');
+let program = require('commander');
 let replaceStream = require('replacestream');
 
-const filename = '/Users/pierre/coding/go/src/dedalus.eu/hsdo/_queries/giganteSelectSdo.sql';
-// const filename = '/Users/pierre/coding/go/src/dedalus.eu/hsdo/_queries/prova.txt';
+program
+  .version('1.0.0');
+// .option('-w, --write', 'Replace the given file with the uglified one')
+// .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
 
-// Replace all the instances of 'birthday' with 'earthday'
-fs.createReadStream(filename)
-  .pipe(replaceStream(/--.*\n/g, ''))
-  .pipe(replaceStream(/\/\*(?:[\s\S]*?)\*\//g, ''))
-  .pipe(replaceStream(' = ', '='))
-  .pipe(replaceStream('( ', '('))
-  .pipe(replaceStream(' )', ')'))
-  .pipe(replaceStream('\n', ' '))
-  .pipe(replaceStream(/ +/g, ' '))
-  .pipe(replaceStream(/^ /g, ''))
-  .pipe(process.stdout);
+program.on('--help', function() {
+  console.log('  Examples:');
+  console.log('');
+  console.log('    $ uglify-sql myscript.sql                       # Outputs to the standard output');
+  console.log('    $ uglify-sql myscript.sql > uglified-script.sql # Redirects the output to the desired file');
+  console.log('');
+});
+
+program.parse(process.argv);
+
+program.args.forEach(function(filename) {
+  let input = fs.createReadStream(filename)
+    .pipe(replaceStream(/--.*\n/g, ''))
+    .pipe(replaceStream(/\/\*(?:[\s\S]*?)\*\//g, ''))
+    .pipe(replaceStream(' =', '='))
+    .pipe(replaceStream('= ', '='))
+    .pipe(replaceStream('( ', '('))
+    .pipe(replaceStream(' )', ')'))
+    .pipe(replaceStream('\n', ' '))
+    .pipe(replaceStream(/ +/g, ' '))
+    .pipe(replaceStream(/^ /g, ''));
+
+  if (program.write) {
+    console.log("Not implemented");
+    // input.pipe();
+  } else {
+    input.pipe(process.stdout);
+  }
+
+});

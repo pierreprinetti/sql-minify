@@ -1,0 +1,32 @@
+{
+  "name": "sql-uglifier",
+  "version": "1.0.0",
+  "description": "cli tool to uglify SQL scripts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qrawl/sql-uglifier.git"
+  },
+  "keywords": [
+    "cli",
+    "sql",
+    "uglifier",
+    "uglify"
+  ],
+  "author": "Pierre Prinetti",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "uglify-sql": "sql-uglifier.es6"
+  },
+  "bugs": {
+    "url": "https://github.com/qrawl/sql-uglifier/issues"
+  },
+  "homepage": "https://github.com/qrawl/sql-uglifier#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "replacestream": "^4.0.0"
+  }
+}
