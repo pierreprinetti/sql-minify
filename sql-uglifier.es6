@@ -9,7 +9,7 @@ let program = require('commander');
 let replaceStream = require('replacestream');
 
 program
-  .version('1.0.5')
+  .version('1.0.6')
   .option('-n, --noeol', 'Don\'t add a newline at the end of the output.');
 // .option('-w, --write', 'Replace the given file with the uglified one')
 // .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
