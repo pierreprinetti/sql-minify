@@ -13,6 +13,7 @@ Install it with:
 
       -h, --help     output usage information
       -V, --version  output the version number
+      -n, --noeol    Don't add a newline at the end of the output
 
     Examples:
 

@@ -9,8 +9,8 @@ let program = require('commander');
 let replaceStream = require('replacestream');
 
 program
-  .version('1.0.2')
-  .option('-n, --noeol', 'Don\'t end the file with a newline.');
+  .version('1.0.5')
+  .option('-n, --noeol', 'Don\'t add a newline at the end of the output.');
 // .option('-w, --write', 'Replace the given file with the uglified one')
 // .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
 
@@ -35,7 +35,7 @@ program.args.forEach(function(filename) {
     .pipe(replaceStream('= ', '='))
     .pipe(replaceStream('( ', '('))
     .pipe(replaceStream(' )', ')'))
-    .pipe(replaceStream('\r\n', '\n'))
+    .pipe(replaceStream('\r', ''))
     .pipe(replaceStream('\n', ' '))
     .pipe(replaceStream(/ +/g, ' '))
     .pipe(replaceStream(/^ /g, ''));
@@ -46,7 +46,9 @@ program.args.forEach(function(filename) {
   } else {
     input.pipe(process.stdout);
     input.on('end', function() {
-      console.log('');
+      if (!program.noeol){
+        console.log('');
+      }
     });
   }
 });
