@@ -35,6 +35,7 @@ program.args.forEach(function(filename) {
     .pipe(replaceStream('= ', '='))
     .pipe(replaceStream('( ', '('))
     .pipe(replaceStream(' )', ')'))
+    .pipe(replaceStream('\r\n', '\n'))
     .pipe(replaceStream('\n', ' '))
     .pipe(replaceStream(/ +/g, ' '))
     .pipe(replaceStream(/^ /g, ''));
