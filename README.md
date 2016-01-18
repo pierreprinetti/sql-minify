@@ -1,5 +1,5 @@
 # sql-uglifier
-Command line tool to uglify SQL scripts.
+Minify your SQL scripts.
 
 Install it with:
 `npm install -g sql-uglifier`
