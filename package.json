@@ -1,5 +1,5 @@
 {
-  "name": "sql-uglifier",
+  "name": "sql-minify",
   "version": "1.0.6",
   "description": "Minify your SQL scripts.",
   "scripts": {
@@ -13,13 +13,15 @@
     "cli",
     "sql",
     "uglifier",
-    "uglify"
+    "uglify",
+    "minify",
+    "minifier"
   ],
   "author": "Pierre Prinetti",
   "license": "MIT",
   "preferGlobal": true,
   "bin": {
-    "uglify-sql": "sql-uglifier.es6"
+    "sql-minify": "sql-minify.js"
   },
   "bugs": {
     "url": "https://github.com/qrawl/sql-uglifier/issues"

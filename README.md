@@ -1,13 +1,13 @@
-# sql-uglifier
+# sql-minify
 Minify your SQL scripts.
 
 Install it with:
-`npm install -g sql-uglifier`
+`npm install -g sql-minify`
 
 ## Usage
-`$ uglify-sql -h`
+`$ sql-minify -h`
 
-    Usage: uglify-sql [options]
+    Usage: sql-minify [options]
 
     Options:
 
@@ -17,8 +17,8 @@ Install it with:
 
     Examples:
 
-      $ uglify-sql myscript.sql
+      $ sql-minify myscript.sql
                    # Outputs to the standard output
 
-      $ uglify-sql myscript.sql > uglified-script.sql
+      $ sql-minify myscript.sql > minified-script.sql
                    # Redirects the output to the desired file

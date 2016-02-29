@@ -17,10 +17,10 @@ program
 program.on('--help', function() {
   console.log('  Examples:');
   console.log('');
-  console.log('    $ uglify-sql myscript.sql');
+  console.log('    $ sql-minify myscript.sql');
   console.log('                   # Outputs to the standard output');
   console.log('');
-  console.log('    $ uglify-sql myscript.sql > uglified-script.sql');
+  console.log('    $ sql-minify myscript.sql > minified-script.sql');
   console.log('                   # Redirects the output to the desired file');
   console.log('');
 });
