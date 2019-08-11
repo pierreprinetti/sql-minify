@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qrawl/sql-uglifier.git"
+    "url": "git+https://github.com/qrawl/sql-minify.git"
   },
   "keywords": [
     "cli",
@@ -24,9 +24,9 @@
     "sql-minify": "sql-minify.js"
   },
   "bugs": {
-    "url": "https://github.com/qrawl/sql-uglifier/issues"
+    "url": "https://github.com/qrawl/sql-minify/issues"
   },
-  "homepage": "https://github.com/qrawl/sql-uglifier#readme",
+  "homepage": "https://github.com/qrawl/sql-minify#readme",
   "dependencies": {
     "commander": "^2.9.0",
     "replacestream": "^4.0.0"
